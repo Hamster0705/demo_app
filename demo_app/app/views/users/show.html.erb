@@ -6,8 +6,12 @@
 </p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
+	<strong>Microposts</strong>
+	<ul>
+		<% Micropost.where(user_id: @user.id).each do |m| %>
+			<li><%= m.content %> </li>
+		<%end%>
+	</ul>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

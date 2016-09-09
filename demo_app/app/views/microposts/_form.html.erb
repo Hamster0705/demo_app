@@ -17,8 +17,9 @@
   </div>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.number_field :user_id %>
+    <%= f.label :user_id %><br>
+    <%= collection_select(:micropost, :user_id, User.all, :id, :name, prompt: true)  %>
+
   </div>
 
   <div class="actions">
